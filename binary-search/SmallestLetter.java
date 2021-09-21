@@ -7,7 +7,7 @@ public class SmallestLetter {
     System.out.println(smallestGreaterLetter);
   }
 
-  public static char smallestLetter(char[] letters, char target) {
+  private static char smallestLetter(char[] letters, char target) {
     int arrayLength = letters.length;
     int start = 0;
     int end = arrayLength - 1;

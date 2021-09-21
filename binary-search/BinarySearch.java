@@ -24,14 +24,12 @@ public class BinarySearch {
       // Find the middle element
       int mid = start + (end - start) / 2;
 
-      if (target == arr[mid]) {
-        return mid;
-      }
-
       if (target < arr[mid]) {
         end = mid - 1;
-      } else {
+      } else if (target > arr[mid]) {
         start = mid + 1;
+      } else {
+        return mid;
       }
     }
 

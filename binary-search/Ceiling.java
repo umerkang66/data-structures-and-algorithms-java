@@ -13,7 +13,7 @@ public class Ceiling {
    * will become mid + 1 Hence we return the start because it will be the minimum
    * greater element from the target
    */
-  public static int ceiling(int[] nums, int target) {
+  private static int ceiling(int[] nums, int target) {
     int start = 0;
     int end = nums.length - 1;
 

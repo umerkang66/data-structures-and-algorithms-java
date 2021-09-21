@@ -7,7 +7,7 @@ public class Floor {
     System.out.println(floorIndex);
   }
 
-  public static int floor(int[] nums, int target) {
+  private static int floor(int[] nums, int target) {
     int start = 0;
     int end = nums.length - 1;
 

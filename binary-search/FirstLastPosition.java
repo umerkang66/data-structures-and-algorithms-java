@@ -9,15 +9,18 @@ public class FirstLastPosition {
     System.out.println(Arrays.toString(position));
   }
 
-  public static int[] searchRange(int[] nums, int target) {
+  private static int[] searchRange(int[] nums, int target) {
     int[] ans = { -1, -1 };
+
     ans[0] = binarySearch(nums, target, true);
-    ans[1] = binarySearch(nums, target, false);
+    if (ans[0] != -1) {
+      ans[1] = binarySearch(nums, target, false);
+    }
 
     return ans;
   }
 
-  public static int binarySearch(int[] nums, int target, boolean findStartIndex) {
+  private static int binarySearch(int[] nums, int target, boolean findStartIndex) {
     int start = 0;
     int end = nums.length - 1;
     int foundPosition = -1;
