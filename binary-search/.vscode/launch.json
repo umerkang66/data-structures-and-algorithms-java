@@ -1,0 +1,98 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch ArrRotationCount",
+      "request": "launch",
+      "mainClass": "ArrRotationCount",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch BinarySearch",
+      "request": "launch",
+      "mainClass": "BinarySearch",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch Ceiling",
+      "request": "launch",
+      "mainClass": "Ceiling",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch FindInMountainArr",
+      "request": "launch",
+      "mainClass": "FindInMountainArr",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch FirstLastPosition",
+      "request": "launch",
+      "mainClass": "FirstLastPosition",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch Floor",
+      "request": "launch",
+      "mainClass": "Floor",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch PeakIndexMountainArr",
+      "request": "launch",
+      "mainClass": "PeakIndexMountainArr",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch RotatedBinarySearch",
+      "request": "launch",
+      "mainClass": "RotatedBinarySearch",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch SmallestLetter",
+      "request": "launch",
+      "mainClass": "SmallestLetter",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch SortedArrInfiniteNums",
+      "request": "launch",
+      "mainClass": "SortedArrInfiniteNums",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch SplitArrayLargestSum",
+      "request": "launch",
+      "mainClass": "SplitArrayLargestSum",
+      "projectName": "binary-search_c446fd86"
+    },
+    {
+      "type": "java",
+      "name": "Launch Sqrt",
+      "request": "launch",
+      "mainClass": "Sqrt",
+      "projectName": "binary-search_c446fd86"
+    }
+  ]
+}
