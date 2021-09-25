@@ -43,15 +43,19 @@ public class SortedMatrix {
     int colMid = cols / 2;
 
     // run the loop till 2 rows are remaining
-    while (rowStart < (rowEnd - 1)) { // while this is true it will have more than 2 rows
+    // while this is true it will have more than 2 rows
+    // RowStart is less than rowEnd - 1, means always two rows will remaining
+    while (rowStart < (rowEnd - 1)) {
       int mid = rowStart + (rowEnd - rowStart) / 2;
+
       if (matrix[mid][colMid] == target) {
         return new int[] { mid, colMid };
       }
-      if (matrix[mid][colMid] < target) {
-        rowStart = mid;
-      } else {
+
+      if (target < matrix[mid][colMid]) {
         rowEnd = mid;
+      } else {
+        rowStart = mid;
       }
     }
 
@@ -60,6 +64,7 @@ public class SortedMatrix {
     if (matrix[rowStart][colMid] == target) {
       return new int[] { rowStart, colMid };
     }
+
     if (matrix[rowStart + 1][colMid] == target) {
       return new int[] { rowStart + 1, colMid };
     }
@@ -68,10 +73,12 @@ public class SortedMatrix {
     if (target <= matrix[rowStart][colMid - 1]) {
       return binarySearch(matrix, rowStart, 0, colMid - 1, target);
     }
+
     // search in 2nd half
     if (target >= matrix[rowStart][colMid + 1] && target <= matrix[rowStart][cols - 1]) {
       return binarySearch(matrix, rowStart, colMid + 1, cols - 1, target);
     }
+
     // search in 3rd half
     if (target <= matrix[rowStart + 1][colMid - 1]) {
       return binarySearch(matrix, rowStart + 1, 0, colMid - 1, target);
