@@ -12,14 +12,14 @@ public class SortedMatrix {
     while (colStart <= colEnd) {
       int mid = colStart + (colEnd - colStart) / 2;
 
-      if (matrix[row][mid] == target) {
+      if (target == matrix[row][mid]) {
         return new int[] { row, mid };
       }
 
-      if (matrix[row][mid] < target) {
-        colStart = mid + 1;
+      if (target < matrix[row][mid]) {
+        colStart = mid - 1;
       } else {
-        colEnd = mid - 1;
+        colEnd = mid + 1;
       }
     }
 
