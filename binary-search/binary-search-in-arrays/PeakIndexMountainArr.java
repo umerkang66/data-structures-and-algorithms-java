@@ -26,10 +26,13 @@ public class PeakIndexMountainArr {
     }
 
     // In the end nums[start] == nums[end], pointing to the largest number
-    // Start and end always trying to find the max element in the above 2 checks 
-    // Hence when they are pointing to just one element, that will be the maximum one
+    // Start and end always trying to find the max element in the above 2 checks
+    // Hence when they are pointing to just one element, that will be the maximum
+    // one
     // So we can return either start or end, they are pointing to same element
-    // More Elaboration: At every point of time for start and end, they have the best possible answer till that time, and if we are saying that only one item is remaining, hence cause of the above line that is best possible answer
+    // More Elaboration: At every point of time for start and end, they have the
+    // best possible answer till that time, and if we are saying that only one item
+    // is remaining, hence cause of the above line that is best possible answer
     return start;
   }
 }
