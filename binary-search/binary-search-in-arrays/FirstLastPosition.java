@@ -2,8 +2,8 @@ import java.util.Arrays;
 
 public class FirstLastPosition {
   public static void main(String[] args) {
-    int[] nums = {5,7,7,8,8,10};
-    int target = 8;
+    int[] nums = { 5, 7, 7, 8, 8, 10 };
+    int target = 7;
 
     int[] position = searchRange(nums, target);
     System.out.println(Arrays.toString(position));
@@ -35,9 +35,11 @@ public class FirstLastPosition {
       } else if (target > nums[mid]) {
         start = mid + 1;
       } else {
-        if (findStartIndex) end = mid - 1;
-        else start = mid + 1;
-        
+        if (findStartIndex)
+          end = mid - 1;
+        else
+          start = mid + 1;
+
         foundPosition = mid;
       }
     }

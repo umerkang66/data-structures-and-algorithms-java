@@ -1,4 +1,4 @@
-public class ValidPerfectSqure {
+public class ValidPerfectSquare {
   public static void main(String[] args) {
     int num = 16;
     boolean perfectSquare = isPerfectSquare(num);
