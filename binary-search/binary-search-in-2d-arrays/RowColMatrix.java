@@ -2,9 +2,14 @@ import java.util.Arrays;
 
 public class RowColMatrix {
   public static void main(String[] args) {
-    int[][] matrix = { { 10, 20, 30, 40 }, { 15, 25, 35, 45 }, { 28, 29, 37, 49 }, { 33, 34, 38, 50 } };
+    int[][] matrix = { 
+      { 10, 20, 30, 40 }, 
+      { 15, 25, 35, 45 }, 
+      { 28, 29, 37, 49 }, 
+      { 33, 34, 38, 50 } 
+    };
 
-    int target = 39;
+    int target = 28;
 
     System.out.println(Arrays.toString(search(matrix, target)));
   }
@@ -18,7 +23,7 @@ public class RowColMatrix {
         return new int[] { row, col };
       }
 
-      if (matrix[row][col] < target) {
+      if (target > matrix[row][col]) {
         row++;
       } else {
         col--;

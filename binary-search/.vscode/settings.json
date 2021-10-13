@@ -1,3 +1,7 @@
 {
-  "java.project.sourcePaths": ["binary-search-in-arrays", "assignments"]
+  "java.project.sourcePaths": [
+    "binary-search-in-arrays",
+    "assignments",
+    "binary-search-in-2d-arrays"
+  ]
 }

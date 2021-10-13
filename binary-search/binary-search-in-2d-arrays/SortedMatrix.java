@@ -3,27 +3,9 @@ import java.util.Arrays;
 public class SortedMatrix {
   public static void main(String[] args) {
     int[][] arr = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+    int target = 6;
 
-    System.out.println(Arrays.toString(search(arr, 6)));
-  }
-
-  // search in the row provided between the cols provided
-  private static int[] binarySearch(int[][] matrix, int row, int colStart, int colEnd, int target) {
-    while (colStart <= colEnd) {
-      int mid = colStart + (colEnd - colStart) / 2;
-
-      if (target == matrix[row][mid]) {
-        return new int[] { row, mid };
-      }
-
-      if (target < matrix[row][mid]) {
-        colStart = mid - 1;
-      } else {
-        colEnd = mid + 1;
-      }
-    }
-
-    return new int[] { -1, -1 };
+    System.out.println(Arrays.toString(search(arr, target)));
   }
 
   private static int[] search(int[][] matrix, int target) {
@@ -85,5 +67,24 @@ public class SortedMatrix {
     } else {
       return binarySearch(matrix, rowStart + 1, colMid + 1, cols - 1, target);
     }
+  }
+
+  // search in the row provided between the cols provided
+  private static int[] binarySearch(int[][] matrix, int row, int colStart, int colEnd, int target) {
+    while (colStart <= colEnd) {
+      int mid = colStart + (colEnd - colStart) / 2;
+
+      if (target == matrix[row][mid]) {
+        return new int[] { row, mid };
+      }
+
+      if (target < matrix[row][mid]) {
+        colStart = mid - 1;
+      } else {
+        colEnd = mid + 1;
+      }
+    }
+
+    return new int[] { -1, -1 };
   }
 }
