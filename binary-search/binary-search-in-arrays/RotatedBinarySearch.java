@@ -77,7 +77,8 @@ public class RotatedBinarySearch {
         return mid - 1;
       }
 
-      // If elements from middle, start, and end are equal, then just skip the duplicates
+      // If elements from middle, start, and end are equal, then just skip the
+      // duplicates
       if (nums[mid] == nums[start] && nums[mid] == nums[end]) {
         // Skip the duplicates
         // NOTE: what if these start and elements were the pivots
