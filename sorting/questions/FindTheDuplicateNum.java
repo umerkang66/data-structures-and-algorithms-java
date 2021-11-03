@@ -1,29 +1,28 @@
 package questions;
-// https://leetcode.com/problems/missing-number/
 
-public class MissingNumbers {
+public class FindTheDuplicateNum {
     public static void main(String[] args) {
-        int[] nums = { 3, 0, 1, 5, 2 };
-        int missingNumber = missingNumbers(nums);
-        System.out.println(missingNumber);
+        int[] nums = { 1, 3, 4, 3, 2 };
+        int duplicateNum = duplicateNum(nums);
+        System.out.println(duplicateNum);
     }
 
-    private static int missingNumbers(int[] nums) {
+    private static int duplicateNum(int[] nums) {
         int start = 0;
         while (start < nums.length) {
-            int correctIndex = nums[start];
-            if (correctIndex < nums.length && nums[start] != nums[correctIndex]) {
+            int correctIndex = nums[start] - 1;
+            if (nums[start] != nums[correctIndex]) {
                 swap(nums, start, correctIndex);
             } else {
                 start++;
             }
         }
         for (int i = 0; i < nums.length; i++) {
-            if (i != nums[i]) {
-                return i;
+            if (i + 1 != nums[i]) {
+                return nums[i];
             }
         }
-        return nums.length;
+        return -1;
     }
 
     private static void swap(int[] nums, int first, int second) {

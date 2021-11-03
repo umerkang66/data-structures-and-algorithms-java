@@ -10,11 +10,11 @@ public class CyclicSort {
     public static void cyclicSort(int[] nums) {
         int start = 0;
         while (start < nums.length) {
-            int correctIndex = nums[start] - 1;
-            if (start == correctIndex) {
-                start++;
+            int correct = nums[start] - 1;
+            if (nums[start] != nums[correct]) {
+                swap(nums, start , correct);
             } else {
-                swap(nums, start, correctIndex);
+                start++;
             }
         }
     }
