@@ -10,16 +10,15 @@ public class FindTheDuplicateNum {
     private static int duplicateNum(int[] nums) {
         int start = 0;
         while (start < nums.length) {
-            int correctIndex = nums[start] - 1;
-            if (nums[start] != nums[correctIndex]) {
-                swap(nums, start, correctIndex);
+            if (nums[start] != start + 1) {
+                int correctIndex = nums[start] - 1;
+                if (nums[start] != nums[correctIndex]) {
+                    swap(nums, start, correctIndex);
+                } else {
+                    return nums[start];
+                }
             } else {
                 start++;
-            }
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (i + 1 != nums[i]) {
-                return nums[i];
             }
         }
         return -1;
