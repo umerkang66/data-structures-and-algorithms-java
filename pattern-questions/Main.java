@@ -7,6 +7,8 @@ public class Main {
         pattern4(rows);
         pattern5(rows);
         pattern28(rows);
+        pattern30(rows);
+        pattern17(rows);
     }
 
     private static void pattern1(int rows) {
@@ -74,7 +76,7 @@ public class Main {
     private static void pattern28(int rows) {
         for (int row = 1; row < 2 * rows; row++) {
             int totalColsInRow = row <= rows ? row : 2 * rows - row;
-            int totalSpaces = row <= rows ? rows - row : row - rows;
+            int totalSpaces = rows - totalColsInRow;
             for (int space = 1; space <= totalSpaces; space++) {
                 System.out.print(" ");
             }
@@ -83,5 +85,47 @@ public class Main {
             }
             System.out.println();
         }
+        // Not related to the algorithm
+        System.out.println("\n");
+    }
+
+    private static void pattern30(int rows) {
+        for (int row = 1; row <= rows; row++) {
+            int totalSpaces = rows - row;
+            for (int space = 1; space <= totalSpaces; space++) {
+                // Extra space is added to make it prettier
+                System.out.print("  ");
+            }
+            for (int firstCol = row; firstCol >= 1; firstCol--) {
+                // Extra space is added to make it prettier
+                System.out.print(firstCol + " ");
+            }
+            for (int secondCol = 2; secondCol <= row; secondCol++) {
+                // Extra space is added to make it prettier
+                System.out.print(secondCol + " ");
+            }
+            System.out.println();
+        }
+        // Not related to the algorithm
+        System.out.println("\n");
+    }
+    
+    private static void pattern17(int rows) {
+        for (int row = 1; row < 2 * rows; row++) {
+            int maxNumberInRow = row <= rows ? row : 2 * rows - row;
+            int totalSpaces = rows - maxNumberInRow;
+            for (int space = 1; space <= totalSpaces; space++) {
+                System.out.print(" ");
+            }
+            for (int colStart = maxNumberInRow; colStart >= 1; colStart--) {
+                System.out.print(colStart);
+            }
+            for (int colEnd = 2; colEnd <= maxNumberInRow; colEnd++) {
+                System.out.print(colEnd);
+            }
+            System.out.println();
+        }
+        // Not related to the algorithm
+        System.out.println("\n");
     }
 }
