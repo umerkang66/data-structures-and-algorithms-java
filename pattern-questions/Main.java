@@ -111,7 +111,7 @@ public class Main {
         // Not related to the algorithm
         System.out.println("\n");
     }
-    
+
     private static void pattern17(int rows) {
         for (int row = 1; row < 2 * rows; row++) {
             int maxNumberInRow = row <= rows ? row : 2 * rows - row;
@@ -136,10 +136,17 @@ public class Main {
         rows = 2 * rows;
         for (int row = 1; row < rows; row++) {
             for (int col = 1; col < rows; col++) {
-                int atEveryIndex = originalRows - Math.min(Math.min(row, col), Math.min(rows - row, rows - col)) + 1;
+                // 1) Top: row
+                // 2) Left: col
+                // 3) Bottom: rows - row
+                // 4) Right: rows - col
+                // Then we will subtract it from originalRows
+                int atEveryIndex =  originalRows - Math.min(Math.min(row, col), Math.min(rows - row, rows - col)) + 1;
                 System.out.print(atEveryIndex + " ");
             }
             System.out.println();
         }
+        // Not related to the algorithm
+        System.out.println("\n");
     }
 }
