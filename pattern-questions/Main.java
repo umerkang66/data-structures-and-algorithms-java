@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
-        int rows = 5;
+        int rows = 4;
+
         pattern1(rows);
         pattern2(rows);
         pattern3(rows);
@@ -9,6 +10,7 @@ public class Main {
         pattern28(rows);
         pattern30(rows);
         pattern17(rows);
+        pattern31(rows);
     }
 
     private static void pattern1(int rows) {
@@ -127,5 +129,17 @@ public class Main {
         }
         // Not related to the algorithm
         System.out.println("\n");
+    }
+
+    private static void pattern31(int rows) {
+        int originalRows = rows;
+        rows = 2 * rows;
+        for (int row = 1; row < rows; row++) {
+            for (int col = 1; col < rows; col++) {
+                int atEveryIndex = originalRows - Math.min(Math.min(row, col), Math.min(rows - row, rows - col)) + 1;
+                System.out.print(atEveryIndex + " ");
+            }
+            System.out.println();
+        }
     }
 }
