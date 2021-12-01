@@ -61,17 +61,11 @@ public class Main {
 
     private static void pattern5(int rows) {
         for (int row = 1; row < 2 * rows; row++) {
-            if (row <= rows) {
-                for (int col = 1; col <= row; col++) {
-                    System.out.print("*");
-                }
-                System.out.println();
-            } else {
-                for (int col = 1; col <= (rows * 2) - row; col++) {
-                    System.out.print("*");
-                }
-                System.out.println();
+            int totalColsInRow = row <= rows ? row : rows * 2 - row;
+            for (int col = 1; col <= totalColsInRow; col++) {
+                System.out.print("*");
             }
+            System.out.println();
         }
         // Not related to the algorithm
         System.out.println("\n");
