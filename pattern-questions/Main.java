@@ -1,12 +1,12 @@
 public class Main {
     public static void main(String[] args) {
         int rows = 5;
-
         pattern1(rows);
         pattern2(rows);
         pattern3(rows);
         pattern4(rows);
         pattern5(rows);
+        pattern28(rows);
     }
 
     private static void pattern1(int rows) {
@@ -61,13 +61,27 @@ public class Main {
 
     private static void pattern5(int rows) {
         for (int row = 1; row < 2 * rows; row++) {
-            int totalColsInRow = row <= rows ? row : rows * 2 - row;
+            int totalColsInRow = row <= rows ? row : 2 * rows - row;
             for (int col = 1; col <= totalColsInRow; col++) {
-                System.out.print("*");
+                System.out.print("* ");
             }
             System.out.println();
         }
         // Not related to the algorithm
         System.out.println("\n");
+    }
+
+    private static void pattern28(int rows) {
+        for (int row = 1; row < 2 * rows; row++) {
+            int totalColsInRow = row <= rows ? row : 2 * rows - row;
+            int totalSpaces = row <= rows ? rows - row : row - rows;
+            for (int space = 1; space <= totalSpaces; space++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= totalColsInRow; col++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
     }
 }
