@@ -7,7 +7,7 @@ public class RecursionBasics {
         System.out.println(fib);
 
         int[] nums = { 3, 9, 12, 15, 17, 22 };
-        int searchedResult = binarySearch(nums, 18, 0, nums.length - 1);
+        int searchedResult = binarySearch(nums, 17, 0, nums.length - 1);
         System.out.println(searchedResult);
     }
 
@@ -33,16 +33,17 @@ public class RecursionBasics {
     }
 
     private static int binarySearch(int[] nums, int target, int start, int end) {
-        int mid = start + (end - start) / 2;
-        while (start <= end) {
-            if (target == nums[mid]) {
-                return mid;
-            } else if (target < nums[mid]) {
-                return binarySearch(nums, target, start, mid - 1);
-            } else if (target > nums[mid]) {
-                return binarySearch(nums, target, mid + 1, end);
-            }
+        if (start > end) {
+            // Not found the answer, completed the whole searching area
+            return -1;
         }
-        return -1;
+        int mid = start + (end - start) / 2;
+        if (target < nums[mid]) {
+            return binarySearch(nums, target, start, mid - 1);
+        } else if (target > nums[mid]) {
+            return binarySearch(nums, target, mid + 1, end);
+        } else {
+            return mid;
+        }
     }
 }
