@@ -39,10 +39,12 @@ public class RecursionBasics {
         }
         int mid = start + (end - start) / 2;
         if (target < nums[mid]) {
+            // Whenever you calling a recursion call, make sure to return it if there is return type mentioned in the function
             return binarySearch(nums, target, start, mid - 1);
         } else if (target > nums[mid]) {
             return binarySearch(nums, target, mid + 1, end);
         } else {
+            // Middle element is equal to the target, return the mid
             return mid;
         }
     }
