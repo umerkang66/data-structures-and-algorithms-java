@@ -1,3 +1,7 @@
 {
-    "java.project.sourcePaths": ["sorting", "pattern-questions"]
+    "java.project.sourcePaths": [
+        "sorting",
+        "pattern-questions",
+        "time-and-space-complexity"
+    ]
 }

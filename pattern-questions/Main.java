@@ -1,7 +1,6 @@
 public class Main {
     public static void main(String[] args) {
         int rows = 4;
-
         pattern1(rows);
         pattern2(rows);
         pattern3(rows);
