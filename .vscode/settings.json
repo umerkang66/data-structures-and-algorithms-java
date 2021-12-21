@@ -1,7 +1,9 @@
 {
     "java.project.sourcePaths": [
+        "time-and-space-complexity",
         "sorting",
+        "recursion/Level1Questions",
         "pattern-questions",
-        "time-and-space-complexity"
+        "recursion"
     ]
 }
