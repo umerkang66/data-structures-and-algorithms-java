@@ -13,6 +13,8 @@ public class Level1Questions {
 
         reverseNum(1234);
         System.out.println(reverseActualSum);
+
+        System.out.println(reverseNum2(5432));
     }
 
     private static void printNto1(int n) {
@@ -66,5 +68,20 @@ public class Level1Questions {
         // The "variable" below is is static class variable
         reverseActualSum = reverseActualSum * 10 + remainder;
         reverseNum(num / 10);
+    }
+
+    private static int reverseNum2(int num) {
+        // Sometime you might need some additional variables in the arguments, in that
+        // case make another function
+        int digits = (int) (Math.log10(num)) + 1;
+        return helper(num, digits);
+    }
+
+    private static int helper(int num, int digits) {
+        if (num % 10 <= 0) {
+            return num;
+        }
+        int remainder = num % 10;
+        return remainder * (int) Math.pow(10, digits - 1) + helper(num / 10, digits - 1);
     }
 }
