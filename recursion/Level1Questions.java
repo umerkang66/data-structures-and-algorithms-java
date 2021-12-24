@@ -93,11 +93,11 @@ public class Level1Questions {
     }
 
     private static int countZeroes(int num, int count) {
-        // if a single non-zero integer is divide by 10, or if zero integer is divide by 10 the answer is always zero
+        // if a single non-zero single integer is divide by 10, or if zero integer is divide by 10 the answer is always zero
         if (num == 0) {
             return count;
         }
-        // Remainder for the non-zero integer is always zero
+        // Remainder for the single non-zero integer is always the number itself
         int rem = num % 10;
         if (rem == 0) {
             count += 1;
