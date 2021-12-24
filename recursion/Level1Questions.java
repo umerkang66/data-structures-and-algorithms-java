@@ -15,6 +15,9 @@ public class Level1Questions {
         System.out.println(reverseActualSum);
 
         System.out.println(reverseNum2(5432));
+        System.out.println(palin(12323321));
+        System.out.println(countZeroes(302, 0));
+        System.out.println(countSteps(14, 0));
     }
 
     private static void printNto1(int n) {
@@ -83,5 +86,43 @@ public class Level1Questions {
         }
         int remainder = num % 10;
         return remainder * (int) Math.pow(10, digits - 1) + helper(num / 10, digits - 1);
+    }
+
+    private static boolean palin(int num) {
+        return num == reverseNum2(num);
+    }
+
+    private static int countZeroes(int num, int count) {
+        // if a single non-zero integer is divide by 10, or if zero integer is divide by 10 the answer is always zero
+        if (num == 0) {
+            return count;
+        }
+        // Remainder for the non-zero integer is always zero
+        int rem = num % 10;
+        if (rem == 0) {
+            count += 1;
+        }
+        return countZeroes(num / 10, count);
+    }
+
+    /**
+     * @apiNote Count Steps Leetcode Question
+     * https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
+     * @param num
+     * @param steps
+     * @return int
+     */
+    private static int countSteps(int num, int steps) {
+        if (num <= 0) {
+            return steps;
+        }
+        if (num % 2 != 0) {
+            num -= 1;
+            steps += 1;
+        } else {
+            num /= 2;
+            steps += 1;
+        }
+        return countSteps(num, steps);
     }
 }
