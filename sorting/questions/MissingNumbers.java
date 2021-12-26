@@ -1,4 +1,3 @@
-package questions;
 // https://leetcode.com/problems/missing-number/
 
 public class MissingNumbers {

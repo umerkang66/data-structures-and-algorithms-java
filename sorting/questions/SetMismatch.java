@@ -1,4 +1,3 @@
-package questions;
 // https://leetcode.com/problems/set-mismatch/submissions/
 
 import java.util.Arrays;
