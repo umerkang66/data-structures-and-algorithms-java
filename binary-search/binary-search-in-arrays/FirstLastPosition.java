@@ -7,8 +7,6 @@ public class FirstLastPosition {
 
     int[] position = searchRange(nums, target);
     System.out.println(Arrays.toString(position));
-
-    System.out.println(findFirstOccurence(nums, target));
   }
 
   private static int[] searchRange(int[] nums, int target) {
@@ -22,35 +20,7 @@ public class FirstLastPosition {
     return ans;
   }
 
-  private static int binarySearch(int[] nums, int target, boolean findStartIndex) {
-    int start = 0;
-    int end = nums.length - 1;
-    int foundPosition = -1;
-
-    while (start <= end) {
-      // Find the middle element
-      int mid = start + (end - start) / 2;
-
-      // Moving to left side or right side of array
-      if (target < nums[mid]) {
-        end = mid - 1;
-      } else if (target > nums[mid]) {
-        start = mid + 1;
-      } else {
-        if (findStartIndex) {
-          end = mid - 1;
-        }
-        else {
-          start = mid + 1;
-        }
-        foundPosition = mid;
-      }
-    }
-
-    return foundPosition;
-  }
-
-  private static int findFirstOccurence(int[] nums, int target) {
+  private static int binarySearch(int[] nums, int target, boolean moveLeft) {
     int start = 0;
     int end = nums.length - 1;
     int result = -1;
@@ -63,8 +33,15 @@ public class FirstLastPosition {
       } else if (target > nums[mid]) {
         start = mid + 1;
       } else {
+        if (moveLeft) {
+          // Look at the left side
+          end = mid - 1;
+        } else {
+          // Look at the right side
+          start = mid + 1;
+        }
+        // Either move to the left or the right if it matches the target return mid
         result = mid;
-        end = mid - 1;
       }
     }
 
