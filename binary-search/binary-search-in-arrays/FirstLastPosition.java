@@ -12,15 +12,15 @@ public class FirstLastPosition {
   private static int[] searchRange(int[] nums, int target) {
     int[] ans = { -1, -1 };
 
-    ans[0] = binarySearch(nums, target, true);
+    ans[0] = firstAndLastBinarySearch(nums, target, true);
     if (ans[0] != -1) {
-      ans[1] = binarySearch(nums, target, false);
+      ans[1] = firstAndLastBinarySearch(nums, target, false);
     }
 
     return ans;
   }
 
-  private static int binarySearch(int[] nums, int target, boolean moveLeft) {
+  private static int firstAndLastBinarySearch(int[] nums, int target, boolean moveLeft) {
     int start = 0;
     int end = nums.length - 1;
     int result = -1;
