@@ -1,3 +1,5 @@
+package com.umerkang;
+
 import java.util.Arrays;
 
 public class StringMethods {

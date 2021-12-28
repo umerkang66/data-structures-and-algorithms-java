@@ -1,3 +1,5 @@
+package com.umerkang;
+
 public class StringBuilderClass {
     public static void main(String[] args) {
         StringBuilder builder = new StringBuilder();

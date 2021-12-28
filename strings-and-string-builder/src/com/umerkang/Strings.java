@@ -1,3 +1,5 @@
+package com.umerkang;
+
 public class Strings {
     public static void main(String[] args) {
         String first = "Umer";
