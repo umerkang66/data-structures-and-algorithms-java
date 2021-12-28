@@ -29,8 +29,8 @@ public class ArrRotationCount {
                 return mid;
             }
             // CRITICAL: If by using ==> start = mid + 1, in the below else block, we
-            // have been moved next to the pivot element but that will be catched in
-            // this if block
+            // have been moved next to the pivot element but that will be caught in
+            // this if block because this checks the previous block
             if (mid > start && nums[mid] < nums[mid - 1]) {
                 // If the mid is smaller than the previous element then the previous
                 // element is the largest element i.e. that is the pivot
@@ -39,6 +39,13 @@ public class ArrRotationCount {
                 return mid - 1;
             }
             if (nums[start] >= nums[mid]) {
+                // IF: start is greater than mid,
+                // THEN: elements are mid should be greater than mid (array is sorted)
+                // AND: elements that are greater than mid are smaller than start (array
+                // is rotated)
+                // HENCE: all the mid and all the elements after mid should be smaller
+                // than the start, but we need the largest element as the pivot
+                // SO: the mid and all the elements after mid can be ignored
                 end = mid - 1;
             } else {
                 // We are not using ==> start = mid;
