@@ -1,8 +1,0 @@
-{
-    "java.project.sourcePaths": [
-        "sorting/questions",
-        "recursion",
-        "binary-search/binary-search-in-2d-arrays",
-        "binary-search/binary-search-in-arrays"
-    ]
-}
