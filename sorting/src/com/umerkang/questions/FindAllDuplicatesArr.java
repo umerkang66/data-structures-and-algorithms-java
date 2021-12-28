@@ -1,16 +1,16 @@
-// https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
+package com.umerkang.questions;
+// https://leetcode.com/problems/find-all-duplicates-in-an-array/
 
 import java.util.ArrayList;
 
-public class AllNumbersMissingArr {
+public class FindAllDuplicatesArr {
     public static void main(String[] args) {
-        int[] nums = { 4, 3, 2, 7, 8, 2, 3, 1 };
-        ArrayList<Integer> missingNums = missingNumbers(nums);
-        System.out.println(missingNums);
+        int[] nums = {4, 3, 4, 2, 7, 8, 2, 3, 1};
+        ArrayList<Integer> duplicates = allDuplicates(nums);
+        System.out.println(duplicates);
     }
 
-    private static ArrayList<Integer> missingNumbers(int[] nums) {
-        ArrayList<Integer> missingNums = new ArrayList<Integer>();
+    private static ArrayList<Integer> allDuplicates(int[] nums) {
         int start = 0;
         while (start < nums.length) {
             int correctIndex = nums[start] - 1;
@@ -18,14 +18,16 @@ public class AllNumbersMissingArr {
                 swap(nums, start, correctIndex);
             } else {
                 start++;
-            }          
-        }
-        for (int i = 0; i < nums.length; i++) {
-            if (i + 1 != nums[i]) {
-                missingNums.add(i + 1);
             }
         }
-        return missingNums;
+
+        ArrayList<Integer> duplicates = new ArrayList<Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != i + 1) {
+                duplicates.add(nums[i]);
+            }
+        }
+        return duplicates;
     }
 
     private static void swap(int[] nums, int first, int second) {

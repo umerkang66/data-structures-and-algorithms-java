@@ -1,10 +1,11 @@
+package com.umerkang.questions;
 // https://leetcode.com/problems/set-mismatch/submissions/
 
 import java.util.Arrays;
 
 public class SetMismatch {
     public static void main(String[] args) {
-        int[] nums = { 8, 5, 3, 5, 2, 6, 1, 4 };
+        int[] nums = {8, 5, 3, 5, 2, 6, 1, 4};
         int[] errors = findErrorNums(nums);
         int[] errors2 = findErrorNums2(nums);
 
@@ -24,10 +25,10 @@ public class SetMismatch {
         }
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
-                return new int[] { nums[i], i + 1 };
+                return new int[]{nums[i], i + 1};
             }
         }
-        return new int[] { -1, -1 };
+        return new int[]{-1, -1};
     }
 
     private static int[] findErrorNums2(int[] nums) {
@@ -38,13 +39,13 @@ public class SetMismatch {
                 if (nums[start] != nums[correctIndex]) {
                     swap(nums, start, correctIndex);
                 } else {
-                    return new int[] { nums[start], start + 1 };
+                    return new int[]{nums[start], start + 1};
                 }
             } else {
                 start++;
             }
         }
-        return new int[] { -1, -1 };
+        return new int[]{-1, -1};
     }
 
     private static void swap(int[] nums, int first, int second) {

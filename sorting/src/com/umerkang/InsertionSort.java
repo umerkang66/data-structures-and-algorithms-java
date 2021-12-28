@@ -1,8 +1,10 @@
+package com.umerkang;
+
 import java.util.Arrays;
 
 public class InsertionSort {
     public static void main(String[] args) {
-        int[] nums = { 5, 3, 4, 1, 2 };
+        int[] nums = {5, 3, 4, 1, 2};
         sort(nums);
         System.out.println(Arrays.toString(nums));
     }
@@ -18,7 +20,7 @@ public class InsertionSort {
             }
         }
     }
-    
+
     private static void swap(int[] nums, int first, int second) {
         int temp = nums[first];
         nums[first] = nums[second];

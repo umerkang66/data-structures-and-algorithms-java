@@ -1,8 +1,9 @@
+package com.umerkang.questions;
 // https://leetcode.com/problems/find-the-duplicate-number/
 
 public class FindTheDuplicateNum {
     public static void main(String[] args) {
-        int[] nums = { 1, 3, 4, 3, 2 };
+        int[] nums = {1, 3, 4, 3, 2};
         int duplicateNum = duplicateNum(nums);
         System.out.println(duplicateNum);
     }

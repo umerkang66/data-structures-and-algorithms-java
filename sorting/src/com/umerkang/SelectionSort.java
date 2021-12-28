@@ -1,8 +1,10 @@
+package com.umerkang;
+
 import java.util.Arrays;
 
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr = { 5, 1, 1, 2, 0, 0 };
+        int[] arr = {5, 1, 1, 2, 0, 0};
         sort(arr);
         System.out.println(Arrays.toString(arr));
     }
