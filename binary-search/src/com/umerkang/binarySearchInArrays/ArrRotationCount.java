@@ -49,8 +49,8 @@ public class ArrRotationCount {
                 end = mid - 1;
             } else {
                 // We are not using ==> start = mid;
-                // But we are using ==> start = mid + 1, that will be caught in
-                // CRITICAL section
+                // But we are using ==> start = mid + 1, if the middle element was the
+                // pivot element it will be returned from the case 1 and 2
                 start = mid + 1;
             }
         }
