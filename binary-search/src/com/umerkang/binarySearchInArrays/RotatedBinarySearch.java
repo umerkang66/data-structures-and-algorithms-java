@@ -4,13 +4,25 @@ public class RotatedBinarySearch {
     public static void main(String[] args) {
         int[] nums = {11, 12, 13, 7, 8, 9, 10};
         int target = 13;
+        int[] numsDuplicate = {2, 9, 2, 2, 2};
+        int targetDuplicate = 9;
 
-        int searchedIndex = rotatedBinarySearch(nums, target);
+        int searchedIndex = rotatedBinarySearch(nums, target, false);
         System.out.println(searchedIndex);
+
+        int searchedIndexDuplicate = rotatedBinarySearch(numsDuplicate, targetDuplicate,
+            true);
+        System.out.println(searchedIndexDuplicate);
     }
 
-    private static int rotatedBinarySearch(int[] nums, int target) {
-        int pivot = findPivot(nums);
+    private static int rotatedBinarySearch(int[] nums, int target, boolean duplicate) {
+        int pivot = -1;
+        if (duplicate) {
+            // If the array contains duplicates findPivot method will not work
+            pivot = findPivotDuplicates(nums);
+        } else {
+            pivot = findPivot(nums);
+        }
         if (pivot == -1) {
             // There is no rotation use the regular binary search and return answer
             return binarySearch(nums, target, 0, nums.length - 1);
@@ -32,6 +44,7 @@ public class RotatedBinarySearch {
         return binarySearch(nums, target, pivot + 1, nums.length - 1);
     }
 
+    // This will not work for duplicates values
     private static int findPivot(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
@@ -58,7 +71,7 @@ public class RotatedBinarySearch {
             }
             if (nums[start] >= nums[mid]) {
                 // IF: start is greater than mid,
-                // THEN: elements are mid should be greater than mid (array is sorted)
+                // THEN: elements after mid should be greater than mid (array is sorted)
                 // AND: elements that are greater than mid are smaller than start (array
                 // is rotated)
                 // HENCE: all the mid and all the elements after mid should be smaller
@@ -75,48 +88,53 @@ public class RotatedBinarySearch {
         return -1;
     }
 
-    private static int findPivotDuplicate(int[] nums) {
+    private static int findPivotDuplicates(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
-
         while (start <= end) {
             int mid = start + (end - start) / 2;
-
-            // Case 1:
+            // Same as finding pivot in normal sorted array (without duplicates)
             if (mid < end && nums[mid] > nums[mid + 1]) {
                 return mid;
             }
-
-            // Case 2:
             if (mid > start && nums[mid] < nums[mid - 1]) {
                 return mid - 1;
             }
-
-            // If elements from middle, start, and end are equal, then just skip the
-            // duplicates
-            if (nums[mid] == nums[start] && nums[mid] == nums[end]) {
+            // In these previous if check, if the START and MID are the same move the
+            // start FORWARD, and if the END and MID are the same move the end BACKWARD
+            if (nums[start] == nums[mid] && nums[end] == nums[mid]) {
                 // Skip the duplicates
-                // NOTE: what if these start and elements were the pivots
-                // Check if start is pivot
-                if (nums[start] > nums[start + 1]) {
+                // NOTE: what if start or end was the pivot, so check if it is a pivot
+                if (start < end && nums[start] > nums[start + 1]) {
+                    // Start will be a pivot if the next element is smaller than start
+                    // element
+                    // Start should also be less than end to avoid INDEX OUT OF BOUNDS
                     return start;
                 }
-                start++;
-
-                // Check whether end is pivot
-                if (nums[end] < nums[end - 1]) {
+                if (end > start && nums[end] < nums[end - 1]) {
                     return end - 1;
                 }
+                start++;
                 end--;
-            }
-            // Left side is sorted so the pivot should be in the right side
-            else if ((nums[start] < nums[mid]) || (nums[start] == nums[mid] && nums[mid] > nums[end])) {
+            } else if (nums[start] < nums[mid] || (
+                // ELSE IF instead of just IF: It is because in the above EQUAL TO
+                // check both start and end should be equal to mid, but if start is
+                // equal to mid but end is not equal to mid, that will be caught in
+                // this check
+                // This second check is to made because if in above EQUAL TO if
+                // statement, if start and mid are equal we have to check with the
+                // end, check whether the mid is greater than end, if it becomes
+                // true, elements before mid will be smaller than mid hence left side
+                // is sorted, we know that now the pivot is on the right side
+                nums[start] == nums[mid] && nums[mid] > nums[end])) {
+                // Left side is sorted check on the right side
+                // If start is LESS than mid, then end is less than mid, hence end is
+                // less than start
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
-
         return -1;
     }
 
@@ -124,8 +142,10 @@ public class RotatedBinarySearch {
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (target < nums[mid]) {
+                // If target is less than mid-element, then target is on the left side
                 end = mid - 1;
             } else if (target > nums[mid]) {
+                // If the target is greater than mid-element, then target is on the right
                 start = mid + 1;
             } else {
                 return mid;
