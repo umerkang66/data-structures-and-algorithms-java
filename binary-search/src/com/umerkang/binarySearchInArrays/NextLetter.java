@@ -18,7 +18,7 @@ public class NextLetter {
             } else if (target > characters[mid]) {
                 start = mid + 1;
             } else {
-                // If the element is present return the next element not the same element
+                // If the element is present then next go to the next element
                 start = mid + 1;
             }
         }
@@ -26,6 +26,7 @@ public class NextLetter {
         if (start < characters.length) {
             return start;
         }
-        return -1;
+        // If the target is greater than the last element, return the first element
+        return characters[0];
     }
 }
