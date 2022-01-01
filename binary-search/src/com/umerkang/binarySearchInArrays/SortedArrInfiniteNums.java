@@ -9,6 +9,7 @@ public class SortedArrInfiniteNums {
     }
 
     private static int sortedArrInfiniteNums(int[] nums, int target) {
+        // If the array is infinite we cannot use the length variable of array
         int start = 0;
         int end = 1;
         // Once the target is less than end, we can apply binary search

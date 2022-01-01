@@ -36,10 +36,10 @@ public class FirstLastPosition {
                 start = mid + 1;
             } else {
                 if (moveLeft) {
-                    // Look at the left side
+                    // Look on the left side
                     end = mid - 1;
                 } else {
-                    // Look at the right side
+                    // Look on the right side
                     start = mid + 1;
                 }
                 // Either move to the left or the right if it matches the target return mid
