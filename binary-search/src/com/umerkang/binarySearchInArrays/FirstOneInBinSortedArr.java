@@ -23,6 +23,7 @@ public class FirstOneInBinSortedArr {
     }
 
     private static int binarySearch(int[] nums, int target, int start, int end) {
+        int result = -1;
         while (start <= end) {
             int mid = start + (end - start) / 2;
             if (target < nums[mid]) {
@@ -31,9 +32,10 @@ public class FirstOneInBinSortedArr {
                 start = mid + 1;
             } else {
                 // We will only look on the left side
+                result = mid;
                 end = mid - 1;
             }
         }
-        return start;
+        return result;
     }
 }
