@@ -23,7 +23,9 @@ public class MinDiffElement {
             } else if (target > nums[mid]) {
                 start = mid + 1;
             } else {
-                // Return the element if it is found
+                // Return the element if it is found because if the target is present the
+                // minimum distance should be at mid (where target is present), and the
+                // minimum distance is at that point would be 0
                 return mid;
             }
         }
