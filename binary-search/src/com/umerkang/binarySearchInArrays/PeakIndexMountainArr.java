@@ -1,40 +1,40 @@
 package com.umerkang.binarySearchInArrays;
+// https://leetcode.com/problems/peak-index-in-a-mountain-array/
+// https://leetcode.com/problems/find-peak-element/
+// Both question have same code
 
 public class PeakIndexMountainArr {
     public static void main(String[] args) {
-        int[] nums = {2, 5, 3, 2};
-        int peakItemIndex = peakIndexMountainArr(nums);
-
+        int[] nums = {1, 2, 3, 5, 6, 4, 3, 2};
+        int peakItemIndex = peakIndexMountainArray(nums);
         System.out.println(peakItemIndex);
     }
 
-    private static int peakIndexMountainArr(int[] nums) {
+    private static int peakIndexMountainArray(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
-
         while (start < end) {
             int mid = start + (end - start) / 2;
-
+            // We don't need to check if mid + 1 is out of index range, because in the
+            // upper loop condition, we have said that start should be always less than
+            // end, so mid + 1 should be always less than or equal to end (mid + 1 will
+            // never exceed the array index range)
             if (nums[mid] > nums[mid + 1]) {
-                // You are in decreasing part of array
-                // This may be the answer but look at left
-                // This is why end != mid - 1
+                // Because mid is greater than mid + 1, we are in the decreasing part
+                // of the array (all the elements after it should be less than mid,
+                // because peak is the largest element, hence we can ignore the
+                // descending part of the array
                 end = mid;
             } else {
-                // You are in ascending part of array
-                // Because mid + 1 is greater than mid, hence we ignore mid element
+                // Mid + 1 is greater than mid, hence numbers are increasing, it is in
+                // the ascending order, the elements before the mid should be less than
+                // mid + 1, hence we can ignore it
                 start = mid + 1;
             }
         }
-
-        // In the end nums[start] == nums[end], pointing to the largest number
-        // Start and end always trying to find the max element in the above 2 checks
-        // Hence when they are pointing to just one element, that will be the maximum
-        // one
-        // So we can return either start or end, they are pointing to same element
-        // More Elaboration: At every point of time for start and end, they have the
-        // best possible answer till that time, and if we are saying that only one item
-        // is remaining, hence cause of the above line that is best possible answer
+        // Once the loop will break, only one element will be remaining and both start
+        // and end will be pointing to that element, hence we can return either start
+        // or end (both start and end are trying to find the largest element)
         return start;
     }
 }
