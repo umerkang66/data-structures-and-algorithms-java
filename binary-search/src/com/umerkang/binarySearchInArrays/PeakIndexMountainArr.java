@@ -24,6 +24,8 @@ public class PeakIndexMountainArr {
                 // of the array (all the elements after it should be less than mid,
                 // because peak is the largest element, hence we can ignore the
                 // descending part of the array
+                // Mid-element may be the answer but also look at left, that's why mid
+                // != mid - 1 and ignore elements that are after mid
                 end = mid;
             } else {
                 // Mid + 1 is greater than mid, hence numbers are increasing, it is in
