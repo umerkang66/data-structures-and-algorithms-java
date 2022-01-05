@@ -37,9 +37,7 @@ public class BinarySearch {
         int start = 0;
         int end = arr.length - 1;
         // Find the whether the array is sorted in ascending or descending order
-        boolean isAscending;
-        isAscending = (arr[start] < arr[end]);
-
+        boolean isAscending = arr[start] < arr[end];
         while (start <= end) {
             // Find the middle element
             int mid = start + (end - start) / 2;
@@ -47,12 +45,14 @@ public class BinarySearch {
                 return mid;
             }
             if (isAscending) {
+                // Normal binary search
                 if (target < arr[mid]) {
                     end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
             } else {
+                // Change the directions
                 if (target > arr[mid]) {
                     end = mid - 1;
                 } else {

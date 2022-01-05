@@ -14,8 +14,7 @@ public class FindInMountainArr {
         int search = orderAgnosticBinarySearch(nums, target, 0, peak);
         if (search == -1) {
             // If it didn't find, find it on the right side of peak
-            search = orderAgnosticBinarySearch(nums, target, peak + 1,
-                nums.length - 1);
+            search = orderAgnosticBinarySearch(nums, target, peak + 1, nums.length - 1);
         }
         return search;
     }
@@ -43,12 +42,14 @@ public class FindInMountainArr {
                 return mid;
             }
             if (isAscending) {
+                // Normal binary search
                 if (target < nums[mid]) {
                     end = mid - 1;
                 } else {
                     start = mid + 1;
                 }
             } else {
+                // Change the directions
                 if (target < nums[mid]) {
                     start = mid + 1;
                 } else {
