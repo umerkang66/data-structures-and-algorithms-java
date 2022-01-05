@@ -13,6 +13,10 @@ public class PeakIndexMountainArr {
     private static int peakIndexMountainArray(int[] nums) {
         int start = 0;
         int end = nums.length - 1;
+        // We have to use "<" instead of "<=" because we are using "end = mid" in the
+        // else condition of binary search, hence at some period of time, start and
+        // will point to the same element, and if were not using "<" the loop will not
+        // break here
         while (start < end) {
             int mid = start + (end - start) / 2;
             // We don't need to check if mid + 1 is out of index range, because in the

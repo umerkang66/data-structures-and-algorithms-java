@@ -27,6 +27,11 @@ public class BookAllocationProblem {
             // value of binary search
             end += book;
         }
+        // We are using "<" instead of "<=" because if we use the latter one at the end
+        // of the while loop start and will NOT point to the same element end will
+        // point to the previous element. Now we have used "<" because we are using
+        // "end = mid" in the else condition of binary search, at some point end will
+        // point to the start. If we were not using "<", the loop will not break here
         while (start < end) {
             int mid = start + (end - start) / 2;
             int sum = 0;
@@ -59,7 +64,8 @@ public class BookAllocationProblem {
             } else {
                 // If the students in loop are less or equal than the total students to
                 // allocate, we can further decrease the total pages of comparison due
-                // to greed
+                // to greed, and because of this end will move less and less, hence it
+                // will point to the start
                 end = mid;
             }
         }
