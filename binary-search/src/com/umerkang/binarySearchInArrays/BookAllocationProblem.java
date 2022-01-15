@@ -60,6 +60,9 @@ public class BookAllocationProblem {
                 // we need to increase total pages to comparison, if we didn't do it 
                 // we have to increase the studentsInLoop more than students that we
                 // didn't want to do
+                // We are not doing start = mid because if students in loop increased the
+                // total students there is no need to check at the mid-position answer
+                // will always be more than mid, so we start with mid + 1
                 start = mid + 1;
             } else {
                 // If the students in loop are less or equal than the total students to

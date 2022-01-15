@@ -5,11 +5,14 @@ public class PaintersPartitionProblem {
         int[] boards = {5, 5, 5, 5};
         int painters = 2;
 
-        int minimumNumberOfTimes = minimumNumberOfTimesToPaint(boards, painters);
-        System.out.println(minimumNumberOfTimes);
+        int minimumNumberOfBoards = minimumNumberOfBoardsToPaint(boards, painters);
+        // Number of n boards takes n time, so number of boards are also equal to
+        // number of time, hence we can return number of boards
+        System.out.println(minimumNumberOfBoards);
     }
 
-    private static int minimumNumberOfTimesToPaint(int[] boards, int painters) {
+    private static int minimumNumberOfBoardsToPaint(int[] boards, int painters) {
+        // Explanation ofo this algorithm in BookAllocationProblem
         int start = 0;
         int end = 0;
         for (int board : boards) {
