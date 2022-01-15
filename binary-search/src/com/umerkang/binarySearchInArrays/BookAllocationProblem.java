@@ -57,8 +57,8 @@ public class BookAllocationProblem {
             }
             if (studentsInLoop > students) {
                 // If students in loop are increased by the total students to allocate
-                // we need to increase total pages to comparison, if we didn't do it we
-                // have to increase the studentsInLoop more than students that we
+                // we need to increase total pages to comparison, if we didn't do it 
+                // we have to increase the studentsInLoop more than students that we
                 // didn't want to do
                 start = mid + 1;
             } else {
