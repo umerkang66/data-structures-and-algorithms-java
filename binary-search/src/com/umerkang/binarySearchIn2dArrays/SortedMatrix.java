@@ -22,11 +22,11 @@ public class SortedMatrix {
             // of it, i.e. is colStart that is 0 to colEnd that length of cols - 1
             return binarySearch(matrix, 0, 0, cols - 1, target);
         }
+        // Run the loop till 2 rows are remaining, if rowStart and rowEnd - 1 becomes
+        // equal the loop will over.
         int rowStart = 0;
         int rowEnd = rows - 1;
         int midCol = (cols - 1) / 2;
-        // Run the loop till 2 rows are remaining, if rowStart and rowEnd - 1 becomes
-        // equal the loop will over.
         while (rowStart < rowEnd - 1) {
             int rowMid = rowStart + (rowEnd - rowStart) / 2;
             if (target == matrix[rowMid][midCol]) {
