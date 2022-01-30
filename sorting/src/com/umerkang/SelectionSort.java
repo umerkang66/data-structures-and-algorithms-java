@@ -2,9 +2,11 @@ package com.umerkang;
 
 import java.util.Arrays;
 
-// Time Complexity: Worst Case O(N^2)
+// Time Complexity: Worst Case O(N^2) also Best Case: O(N^2)
 // Select an Element and put it at its correct index (swap with the element that is
 // present on the correct index)
+// It is not a Stable Algorithm
+// It performs well on small pieces
 public class SelectionSort {
     public static void main(String[] args) {
         int[] nums = {5, 3, 2, 2, 0, 0, 1, 9};
@@ -18,25 +20,28 @@ public class SelectionSort {
             // both, then find the second largest and its correct index, then swap and
             // so on, so on, till all the array is sorted
             int correctLastIndex = nums.length - i - 1;
-            int largestNumInUnsortedArrIndex = getLargestNumInUnsortedArray(nums, i);
-            swap(nums, largestNumInUnsortedArrIndex, correctLastIndex);
+            // CorrectLastIndex is the lastIndex of unsorted array (Important! not sorted
+            // array), hence we have to find the maximum in array till this
+            // correctLastIndex because after this all the elements are already sorted
+            int maxIndex = getMaxIndex(nums, correctLastIndex);
+            // Swap the both elements at given indexes
+            swap(nums, maxIndex, correctLastIndex);
         }
     }
 
-    // Get the largest element, but not return that was the largest in the previous
-    // loop, that's why we use the index of first loop, that will be minus (-) from the
-    // nums length, because the largest element from the previous loop will be at last,
-    // that will be ignored if we subtract the index of first loop from nums.length
-    private static int getLargestNumInUnsortedArray(int[] nums, int i) {
-        int maxElement = Integer.MIN_VALUE;
-        int maxElementIndex = -1;
-        for (int j = 0; j < nums.length - i; j++) {
-            if (nums[j] > maxElement) {
-                maxElement = nums[j];
-                maxElementIndex = j;
+    private static int getMaxIndex(int[] nums, int end) {
+        // As start is always start from 0
+        int start = 0;
+        // First put the max whatever the first element is
+        int max = start;
+        // Start the loop from start till end (end included), end is already subtracted
+        // "i" and "1" from nums.length, so it will not be indexed out of bounds
+        for (int i = start; i <= end; i++) {
+            if (nums[i] > nums[max]) {
+                max = i;
             }
         }
-        return maxElementIndex;
+        return max;
     }
 
     // Swap the two elements from nums
