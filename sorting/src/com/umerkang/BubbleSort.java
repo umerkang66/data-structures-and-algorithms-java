@@ -2,6 +2,13 @@ package com.umerkang;
 
 import java.util.Arrays;
 
+// STABLE SORTING ALGORITHMS: If the array has two same elements (colored balls) with the
+// different color, but when sorted the order is maintained means (if the black ball
+// comes first to the red ball with same value in the original array, it also comes first
+// in the sorted array)
+// UNSTABLE SORTING ALGORITHMS: It is opposite to stable sorting algorithms, the order
+// is not maintained here in the sorted one
+
 class BubbleSort {
     public static void main(String[] args) {
         int[] arr = {5, 1, 1, 2, 0, 0};
@@ -22,8 +29,8 @@ class BubbleSort {
             // Reset the isSwapped to false
             isSwapped = false;
             //  At every step, the largest element from an unsorted array will come
-            //  to the end, hence it will form sorting from the end. Hence, should not be
-            //  comparing the sorted part of the array.
+            //  to the respective end, hence it will form sorting from the end. Hence,
+            //  should not be comparing the sorted part of the array.
             //  When the outer loop "i" is 1, one the largest element will have come to
             //  an end (array is sorted by 1 element), we don't need to check for the
             //  last element

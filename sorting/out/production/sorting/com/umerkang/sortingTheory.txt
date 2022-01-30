@@ -1,6 +1,0 @@
-BUBBLE SORT:
-In every step you are comparing the adjacent elements, if second element is larger than
-the first element, then swap it. It is also known as sinking sort, exchange sort
-At every step, the largest element from an unsorted array will come to the end, hence
-form will form sorting from the end. Hence should not be comparing the sorted part of the
-array.

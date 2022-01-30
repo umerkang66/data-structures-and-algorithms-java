@@ -2,36 +2,47 @@ package com.umerkang;
 
 import java.util.Arrays;
 
+// Time Complexity: Worst Case O(N^2)
+// Select an Element and put it at its correct index (swap with the element that is
+// present on the correct index)
 public class SelectionSort {
     public static void main(String[] args) {
-        int[] arr = {5, 1, 1, 2, 0, 0};
-        sort(arr);
-        System.out.println(Arrays.toString(arr));
+        int[] nums = {5, 3, 2, 2, 0, 0, 1, 9};
+        sort(nums);
+        System.out.println(Arrays.toString(nums));
     }
 
-    private static void sort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            // Find the maximum item in the array and swap with current (least maximum
-            // element of array index
-            int last = arr.length - i - 1;
-            int maxIndex = getMaxIndex(arr, 0, last);
-            swap(arr, maxIndex, last);
+    private static void sort(int[] nums) {
+        for (int i = 0; i < nums.length; i++) {
+            // First the largest element's index and its correctIndex, then swap them
+            // both, then find the second largest and its correct index, then swap and
+            // so on, so on, till all the array is sorted
+            int correctLastIndex = nums.length - i - 1;
+            int largestNumInUnsortedArrIndex = getLargestNumInUnsortedArray(nums, i);
+            swap(nums, largestNumInUnsortedArrIndex, correctLastIndex);
         }
     }
 
-    private static int getMaxIndex(int[] arr, int start, int end) {
-        int max = start;
-        for (int i = start; i <= end; i++) {
-            if (arr[i] > arr[max]) {
-                max = i;
+    // Get the largest element, but not return that was the largest in the previous
+    // loop, that's why we use the index of first loop, that will be minus (-) from the
+    // nums length, because the largest element from the previous loop will be at last,
+    // that will be ignored if we subtract the index of first loop from nums.length
+    private static int getLargestNumInUnsortedArray(int[] nums, int i) {
+        int maxElement = Integer.MIN_VALUE;
+        int maxElementIndex = -1;
+        for (int j = 0; j < nums.length - i; j++) {
+            if (nums[j] > maxElement) {
+                maxElement = nums[j];
+                maxElementIndex = j;
             }
         }
-        return max;
+        return maxElementIndex;
     }
 
-    private static void swap(int[] arr, int first, int second) {
-        int temp = arr[first];
-        arr[first] = arr[second];
-        arr[second] = temp;
+    // Swap the two elements from nums
+    private static void swap(int[] nums, int first, int second) {
+        int temp = nums[first];
+        nums[first] = nums[second];
+        nums[second] = temp;
     }
 }
