@@ -9,25 +9,37 @@ class BubbleSort {
         System.out.println(Arrays.toString(arr));
     }
 
+    //  In every step you are comparing the adjacent elements, if second element is larger
+    //  than the first element, then swap it. It is also known as sinking sort,
+    //  exchange sort
     private static void bubbleSort(int[] arr) {
-        boolean swapped;
-        // run the steps n-1 times
+        // We need to use swapped, because if the array is already sorted or almost
+        // sorted, so we have to stop loop inner loop right there, we can do this by
+        // checking if for a particular inner loop the value of "j" never swapped hence
+        // the array after that element is already sorted, break the outer loop
+        boolean isSwapped;
         for (int i = 0; i < arr.length; i++) {
-            swapped = false;
-            // for each step, max item will come at the last respective index
+            // Reset the isSwapped to false
+            isSwapped = false;
+            //  At every step, the largest element from an unsorted array will come
+            //  to the end, hence it will form sorting from the end. Hence, should not be
+            //  comparing the sorted part of the array.
+            //  When the outer loop "i" is 1, one the largest element will have come to
+            //  an end (array is sorted by 1 element), we don't need to check for the
+            //  last element
+            //  Hence, "j" will run to the < arr.length - i
             for (int j = 1; j < arr.length - i; j++) {
-                // swap if the item is smaller than the previous item
                 if (arr[j] < arr[j - 1]) {
-                    // swap
                     int temp = arr[j];
                     arr[j] = arr[j - 1];
                     arr[j - 1] = temp;
-                    swapped = true;
+                    isSwapped = true;
                 }
             }
-            // if you did not swap for a particular value of i, it means the array is sorted
-            // hence stop the program
-            if (!swapped) {
+            // If isSwapped is false it means for whole inner loop not a single one is
+            // swapped, hence the array after is sorted, break the outer (main) loop, So,
+            // in the best case time complexity becomes O(1)
+            if (!isSwapped) {
                 break;
             }
         }
