@@ -16,7 +16,10 @@ public class AllNumbersMissingArr {
         int start = 0;
         while (start < nums.length) {
             int correctIndex = nums[start] - 1;
-            // Explanation of the below line in Missing Number question
+            // Here we don't have to write the index out bound preventing logic,
+            // because if some elements will be missing from an array, two other
+            // elements will be present in their place, so there will be no index out
+            // of bounds
             if (nums[start] != nums[correctIndex]) {
                 swap(nums, start, correctIndex);
             } else {
