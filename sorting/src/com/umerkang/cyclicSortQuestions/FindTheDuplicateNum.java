@@ -1,4 +1,4 @@
-package com.umerkang.questions;
+package com.umerkang.cyclicSortQuestions;
 // https://leetcode.com/problems/find-the-duplicate-number/
 
 public class FindTheDuplicateNum {

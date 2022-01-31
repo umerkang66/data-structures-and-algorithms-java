@@ -1,4 +1,4 @@
-package com.umerkang.questions;
+package com.umerkang.cyclicSortQuestions;
 
 public class FirstMissingPositive {
     public static void main(String[] args) {
