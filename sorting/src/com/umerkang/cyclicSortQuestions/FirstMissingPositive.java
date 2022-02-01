@@ -17,7 +17,7 @@ public class FirstMissingPositive {
             int correctIndex = nums[start] - 1;
             // Start checking from 1 till the element that is equal to nums.length
             // because number starting from one, then largest number will equal to the
-            // length of array
+            // length of array, ignore the elements are that are greater than nums.length
             // Zero should not be included
             if (nums[start] > 0 && nums[start] <= nums.length && nums[start] != nums[correctIndex]) {
                 swap(nums, start, correctIndex);
