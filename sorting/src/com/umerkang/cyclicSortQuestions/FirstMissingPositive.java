@@ -25,6 +25,10 @@ public class FirstMissingPositive {
                 start++;
             }
         }
+        // After the array is sorted, it will start from 1, and all the other elements
+        // that are out of range should be present in the array but not according to
+        // their correct index, hence we can find them and return accordingly (number
+        // that is missing)
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
                 // The first element that is not equal to its correctIndex, return it
