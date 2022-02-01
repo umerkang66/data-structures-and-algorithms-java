@@ -20,10 +20,11 @@ public class FindAllDuplicatesArr {
                 start++;
             }
         }
-
-        ArrayList<Integer> duplicates = new ArrayList<Integer>();
+        // Finding the duplicates
+        ArrayList<Integer> duplicates = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != i + 1) {
+                // Add the actual number present in the array
                 duplicates.add(nums[i]);
             }
         }

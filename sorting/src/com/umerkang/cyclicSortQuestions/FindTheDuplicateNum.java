@@ -20,7 +20,7 @@ public class FindTheDuplicateNum {
                 if (nums[i] != nums[correctIndex]) {
                     swap(nums, i, correctIndex);
                 } else {
-                    // Otherwise it is duplicate return it
+                    // Otherwise, it is duplicate return it
                     return nums[i];
                 }
             } else {

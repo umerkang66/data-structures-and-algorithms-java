@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 public class SetMismatch {
     public static void main(String[] args) {
-        int[] nums = {8, 5, 3, 5, 2, 6, 1, 4};
+        int[] nums = {8, 7, 3, 5, 3, 6, 1, 4};
         int[] errors = findErrorNums(nums);
         int[] errors2 = findErrorNums2(nums);
 
