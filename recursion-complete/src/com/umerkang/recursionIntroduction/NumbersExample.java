@@ -1,6 +1,6 @@
 package com.umerkang.recursionIntroduction;
 
-public class Main {
+public class NumbersExample {
     public static void main(String[] args) {
 
     }
