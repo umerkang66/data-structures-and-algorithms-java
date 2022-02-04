@@ -8,6 +8,11 @@ public class BinarySearchRecursive {
     }
 
     private static int binarySearchRecursive(int[] nums, int target, int start, int end) {
+        // Base condition
+        if (start > end) {
+            // Don't find the answer
+            return -1;
+        }
         int mid = start + (end - start) / 2;
         if (target < nums[mid]) {
             // Always return the recursive call, because in the last function call (if
