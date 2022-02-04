@@ -1,0 +1,54 @@
+If for a same algorithm, runs at different times at two different computers
+of different computing powers, the time complexity will be same (because it
+is not actual time taken to complete an algorithm but
+
+TIME COMPLEXITY: It is the relationship between the size of the input of
+algorithm and time taken to complete this algorithm is time complexity. If
+it is constant it will be constant on different types of computers, but the
+slop of the graph may differ (because of the different computing powers of
+computers)
+
+TIME COMPLEXITY: It is the relationship of how the time taken grows, if the
+size of input grows. In linear time complexity, time is growing linearly as
+the size is growing (that is constant)
+
+1) We don't care about small numbers (size) in time and space complexity,
+always care about larger numbers (size)
+
+2) We don't care about actual time, we care about how the time is growing, if
+the input is growing
+
+3) Ignore the constants
+
+4) O(N^3 + logN) logN is very small compare to the N^3 hence we can ignore
+the logN, always ignore less dominant terms
+
+O(3N^3 + 4N^2 + 5N + 6) by ignoring the constants it becomes O(N^3 + N^2 +
+N) and by ignoring the less dominate, it becomes O(N^3)
+O(1) < O(logN) < O(N) < O(NlogN) < O(2^N)
+
+Types of O Notation:
+
+1) BIG 'O' NOTATION: If an algorithm has big o of O(N^3), it is actually UPPER
+BOUND (the graph you have is upper bound), in simple language the graph
+(complexity) cannot exceed the big o of O(N^3). The algorithm may be solved
+in constant time, linear time, N(logN), and all the others below O(N^3),
+just it cannot exceed the provided complexity
+
+Maths of Big 'O' Notation:
+f(x) = O(g(n))
+limit N --> ♾️ f(n) / g(n) < ♾️
+Always look for large values we are doing that we are taking the limit as infinity
+Limits means when the value of n reaches the infinity (really close to infinity), the
+value will also be less than infinity unless N becomes actually infinity
+If N becomes infinity, and we put the value in above equation, the value will always be
+less than infinity, means value cannot exceed (it can be lower than this), it is upper
+bound
+
+2) BIG OMEGA NOTATION: It is opposite of Big 'O' Notation, it means if the algorithm has
+complexity of Omega (N^3), it will at least take N^3. It will never less than this, It is
+a lower bound. Complexity can be more than it.
+Maths:
+limit N --> ♾️ f(n) / g(n) > 0
+
+3) What if an algorithm has lower bound and upper bound as O(N^2)
