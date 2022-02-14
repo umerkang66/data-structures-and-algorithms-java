@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/time-and-space-complexity.iml" filepath="$PROJECT_DIR$/time-and-space-complexity.iml" />
+      <module fileurl="file://$PROJECT_DIR$/maths-for-dsa.iml" filepath="$PROJECT_DIR$/maths-for-dsa.iml" />
     </modules>
   </component>
 </project>
