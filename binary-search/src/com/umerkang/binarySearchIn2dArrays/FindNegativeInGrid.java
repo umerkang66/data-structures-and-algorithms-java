@@ -22,7 +22,7 @@ public class FindNegativeInGrid {
         int count = 0;
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            // It is in decending order
+            // It is in descending order
             if (arr[mid] >= 0) {
                 start = mid + 1;
             } else {
