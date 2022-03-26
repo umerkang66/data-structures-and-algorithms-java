@@ -12,6 +12,8 @@ public class LinearSearch {
 
         ArrayList<Integer> ansWithArrayList = new ArrayList<>();
         System.out.println(linearSearchMultipleWithArrayList(nums, 18, 0, ansWithArrayList));
+
+        System.out.println(linearSearchWithListInBody(nums, 18, 0));
     }
 
     private static int linearSearch(int[] nums, int target, int i) {
@@ -54,5 +56,25 @@ public class LinearSearch {
             ans.add(i);
         }
         return linearSearchMultipleWithArrayList(nums, target, ++i, ans);
+    }
+
+    // Create List in Function Body
+    // This is not optimized because objects are creating again and again
+    private static ArrayList<Integer> linearSearchWithListInBody(int[] nums, int target
+        , int i) {
+        if (i == nums.length) {
+            // Return this empty list, we will add the answers in when we will
+            // return the functions
+            return new ArrayList<Integer>();
+        }
+        // This will contain the answer from current function call only
+        ArrayList<Integer> ansList = new ArrayList<>();
+        if (target == nums[i]) {
+            ansList.add(i);
+        }
+        ArrayList<Integer> returnedList = linearSearchWithListInBody(nums, target, ++i);
+        returnedList.addAll(ansList);
+        // This should be in opposite direction
+        return returnedList;
     }
 }
