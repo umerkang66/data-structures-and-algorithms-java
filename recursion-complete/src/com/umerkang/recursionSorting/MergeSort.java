@@ -58,6 +58,10 @@ public class MergeSort {
     private static void sortInPlace(int[] nums, int start, int end) {
         // Return if there is only one element in array
         if (end - start == 1) {
+            // After this return, mergeInPlace will start to be called, Here there will
+            // be only one element in pointed by indexes (treat it as a single array),
+            // there will be two arrays at the end, then mergeInPlace will sort them
+            // then merge them
             return;
         }
         int mid = start + (end - start) / 2;
@@ -67,6 +71,7 @@ public class MergeSort {
         // Pass the index till end, because mergeInPlace will check for second sub-array
         // index is less than end, so it automatically becomes end - 1
         sortInPlace(nums, mid, end);
+        // Merging
         mergeInPlace(nums, start, mid, end);
     }
 
