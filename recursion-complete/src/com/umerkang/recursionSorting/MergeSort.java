@@ -71,14 +71,21 @@ public class MergeSort {
         // Pass the index till end, because mergeInPlace will check for second sub-array
         // index is less than end, so it automatically becomes end - 1
         sortInPlace(nums, mid, end);
+
         // Merging
+        // We are also passing mid, so we can separate the two sub-arrays from
+        // single-array
         mergeInPlace(nums, start, mid, end);
     }
 
     private static void mergeInPlace(int[] nums, int start, int mid, int end) {
         int[] ansArr = new int[end - start];
+        // We are treating these as two arrays
+        // Imagine first array starts from "start", and ends at "mid"
         int i = start;
+        // Imagine second array starts from "mid", and ends at "end"
         int j = mid;
+        // "k" pointer use to iterate over this "ansArr"
         int k = 0;
         while (i < mid && j < end) {
             if (nums[i] < nums[j]) {
