@@ -25,7 +25,7 @@ public class InsertionSort {
         // is considered as i + 1, if "i" will point to the last element, "j" will
         // become index out of bounds
         for (int i = 0; i < nums.length - 1; i++) {
-            // "j" has to greater than zero to avoid index out of bounds
+            // "j" has to greater than zero to avoid index out of bounds, because we also check for the previous element than j i.e. "j - 1"
             for (int j = i + 1; j > 0; j--) {
                 // This loop will run from next element from i, and starts the loop to
                 // previous element till it reaches 0 + 1, because it checks for j - 1
