@@ -4,23 +4,23 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] nums = {8, 3, 4, 12, 5, 6};
-        int[] sortedNums = sort(nums);
-        System.out.println(Arrays.toString(sortedNums));
+        int[] numbers = {8, 3, 4, 12, 5, 6};
+        int[] sortedNumbers = sort(numbers);
+        System.out.println(Arrays.toString(sortedNumbers));
 
         // Pass the index till end, because mergeInPlace will check for second sub-array
         // index is less than end, so it automatically becomes end - 1
-        sortInPlace(nums,0, nums.length);
-        System.out.println(Arrays.toString(nums));
+        sortInPlace(numbers,0, numbers.length);
+        System.out.println(Arrays.toString(numbers));
     }
 
-    private static int[] sort(int[] nums) {
-        if (nums.length == 1) {
-            return nums;
+    private static int[] sort(int[] numbers) {
+        if (numbers.length == 1) {
+            return numbers;
         }
-        int mid = nums.length / 2;
-        int[] left = sort(Arrays.copyOfRange(nums, 0, mid));
-        int[] right = sort(Arrays.copyOfRange(nums, mid, nums.length));
+        int mid = numbers.length / 2;
+        int[] left = sort(Arrays.copyOfRange(numbers, 0, mid));
+        int[] right = sort(Arrays.copyOfRange(numbers, mid, numbers.length));
         return merge(left, right);
     }
 
@@ -55,7 +55,7 @@ public class MergeSort {
         return ansArr;
     }
 
-    private static void sortInPlace(int[] nums, int start, int end) {
+    private static void sortInPlace(int[] numbers, int start, int end) {
         // Return if there is only one element in array
         if (end - start == 1) {
             // After this return, mergeInPlace will start to be called, Here there will
@@ -67,18 +67,18 @@ public class MergeSort {
         int mid = start + (end - start) / 2;
         // Pass the index till mid, because mergeInPlace will check for first sub-array
         // index is less than mid, so it automatically becomes mid - 1
-        sortInPlace(nums, start, mid);
+        sortInPlace(numbers, start, mid);
         // Pass the index till end, because mergeInPlace will check for second sub-array
         // index is less than end, so it automatically becomes end - 1
-        sortInPlace(nums, mid, end);
+        sortInPlace(numbers, mid, end);
 
         // Merging
         // We are also passing mid, so we can separate the two sub-arrays from
         // single-array
-        mergeInPlace(nums, start, mid, end);
+        mergeInPlace(numbers, start, mid, end);
     }
 
-    private static void mergeInPlace(int[] nums, int start, int mid, int end) {
+    private static void mergeInPlace(int[] numbers, int start, int mid, int end) {
         int[] ansArr = new int[end - start];
         // We are treating these as two arrays
         // Imagine first array starts from "start", and ends at "mid"
@@ -88,30 +88,30 @@ public class MergeSort {
         // "k" pointer use to iterate over this "ansArr"
         int k = 0;
         while (i < mid && j < end) {
-            if (nums[i] < nums[j]) {
-                ansArr[k] = nums[i];
+            if (numbers[i] < numbers[j]) {
+                ansArr[k] = numbers[i];
                 i++;
             } else {
-                ansArr[k] = nums[j];
+                ansArr[k] = numbers[j];
                 j++;
             }
             k++;
         }
         // It may be possible that one of the array is not complete
         while (i < mid) {
-            ansArr[k] = nums[i];
+            ansArr[k] = numbers[i];
             i++;
             k++;
         }
         while (j < end) {
-            ansArr[k] = nums[j];
+            ansArr[k] = numbers[j];
             j++;
             k++;
         }
         for (int l = 0; l < ansArr.length; l++) {
-            // Start adding the in the original array from start, from where this merge
+            // Start adding the in the original array from start, from where this merges
             // function is called
-            nums[start + l] = ansArr[l];
+            numbers[start + l] = ansArr[l];
         }
     }
 }
