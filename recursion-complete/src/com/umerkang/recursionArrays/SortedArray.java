@@ -2,7 +2,7 @@ package com.umerkang.recursionArrays;
 
 public class SortedArray {
     public static void main(String[] args) {
-        int[] nums = {3, 5, 8, 11, 15, 21, 9};
+        int[] nums = { 3, 5, 8, 11, 15, 21, 9 };
         System.out.println(sortedArray(nums, 0));
     }
 
