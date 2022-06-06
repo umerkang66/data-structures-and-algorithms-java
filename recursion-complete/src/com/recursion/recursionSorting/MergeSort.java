@@ -4,13 +4,13 @@ import java.util.Arrays;
 
 public class MergeSort {
     public static void main(String[] args) {
-        int[] numbers = {8, 3, 4, 12, 5, 6};
+        int[] numbers = { 8, 3, 4, 12, 5, 6 };
         int[] sortedNumbers = sort(numbers);
         System.out.println(Arrays.toString(sortedNumbers));
 
         // Pass the index till end, because mergeInPlace will check for second sub-array
         // index is less than end, so it automatically becomes end - 1
-        sortInPlace(numbers,0, numbers.length);
+        sortInPlace(numbers, 0, numbers.length);
         System.out.println(Arrays.toString(numbers));
     }
 
