@@ -7,17 +7,15 @@ public class Palindrome {
     }
 
     private static boolean palindrome(int n) {
-        int numLength = (int) (Math.log10(n) + 1);
-        return n == reverseNumber(n, numLength);
+        return n == reverseNumber(n, 0);
     }
 
-    private static int reverseNumber(int n, int numLength) {
-        // Explanation is in reverseNumber question
-        if (n / 10 <= 0) {
-            return n;
+    private static int reverseNumber(int n, int ans) {
+        if (n == 0) {
+            return ans;
         }
-        int remainder = n % 10;
-        return remainder * (int) Math.pow(10, numLength - 1) + reverseNumber(n / 10,
-            numLength - 1);
+        int lastDigit = n % 10;
+        ans = ans * 10 + lastDigit;
+        return reverseNumber(n / 10, ans);
     }
 }
