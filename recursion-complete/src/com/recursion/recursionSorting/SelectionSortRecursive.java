@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SelectionSortRecursive {
     public static void main(String[] args) {
         int[] nums = {33, 12, 56, 9, 6, 11, 99, 30};
-        sort(nums, nums.length, 0, 0);
+        sort(nums, nums.length - 1, 0, 0);
         System.out.println(Arrays.toString(nums));
     }
 
@@ -13,8 +13,8 @@ public class SelectionSortRecursive {
         if (a == 0) {
             return;
         }
-        if (b < a) {
-            // Because we passed nums.length as "a" (not nums.length - 1), and we will
+        if (b <= a) {
+            // Because we passed nums.length - 1 as "a" (a is last element), and we will
             // iterate (recurse actually) using b, that will always be till the last
             // index element
             if (nums[b] > nums[max]) {
@@ -29,17 +29,17 @@ public class SelectionSortRecursive {
                 // be passed as the max parameter
                 sort(nums, a, b + 1, max);
             }
-        } else {
-            // If "b" is not smaller than "a" (whole length), it means "b" has already
-            // iterated over the array, and found the max element
-            // Swap it with the last possible element, respectively ("a index" is the
-            // length so last possible element is a - 1)
-            swap(nums, a - 1, max);
-            // Then again start sorting, but here this should be the next (first for
-            // loop in iterative method), and start the second (for loop) recursive
-            // iteration from zero
-            sort(nums, a - 1, 0, 0);
+            return;
         }
+        // If "b" is not smaller or equal than "a" (length - 1), it means "b" has already
+        // iterated over the array, and found the max element
+        // Swap it with the last possible element, respectively ("'a' index" is the
+        // last possible element)
+        swap(nums, a, max);
+        // Then again start sorting, but here this should be the next (first for
+        // loop in iterative method), and start the second (for loop) recursive
+        // iteration from zero
+        sort(nums, a - 1, 0, 0);
     }
 
     private static void swap(int[] nums, int first, int second) {
