@@ -17,12 +17,13 @@ public class BubbleSortRecursive {
             return;
         }
         if (b < a) {
-            // "b" should be less than "a" (lastIndex) because we check for the element
-            // at index "b + 1"
+            // "b" should be less than "a" (lastIndex) because
+            // we check for the element at index "b + 1"
             if (nums[b] > nums[b + 1]) {
                 swap(nums, b, b + 1);
             }
             bubbleSortRecursive(nums, a, b + 1);
+            return;
         }
         bubbleSortRecursive(nums, a - 1, 0);
     }
