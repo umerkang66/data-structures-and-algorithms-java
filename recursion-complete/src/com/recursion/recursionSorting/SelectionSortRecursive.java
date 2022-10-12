@@ -11,6 +11,8 @@ public class SelectionSortRecursive {
 
     private static void sort(int[] nums, int a, int b, int max) {
         if (a == 0) {
+            // when outer loop will be at first element, it will be already
+            // at the correct position, so stop the loop
             return;
         }
         if (b <= a) {
