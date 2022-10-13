@@ -22,11 +22,15 @@ import java.util.Arrays;
 public class QuickSort {
     public static void main(String[] args) {
         int[] numbers = {8, 3, 4, 12, 5, 6};
-        quickSort(numbers, 0, numbers.length - 1);
+        sortWithMid(numbers, 0, numbers.length - 1);
         System.out.println(Arrays.toString(numbers));
+
+        int[] nums = {8, 3, 4, 12, 5, 6};
+        sortWithEnd(nums, 0, nums.length - 1);
+        System.out.println(Arrays.toString(nums));
     }
 
-    private static void quickSort(int[] numbers, int low, int high) {
+    private static void sortWithMid(int[] numbers, int low, int high) {
         if (low >= high) {
             // When high, and low will be pointing to the same element, after swapping
             // that element, high will move forward, and low will move backward, thus
@@ -67,9 +71,51 @@ public class QuickSort {
         }
         // Now my pivot is at current index, sort the two halves now
         // After the while loop, end will be before the pivot (mid)
-        quickSort(numbers, low, end);
+        sortWithMid(numbers, low, end);
         // After the while loop, start will be after the pivot (mid)
-        quickSort(numbers, start, high);
+        sortWithMid(numbers, start, high);
+    }
+
+    private static void sortWithEnd(int[] nums, int start, int end) {
+        if (start >= end) {
+            // if there is only element in the array, return it.
+            // that one is already sorted.
+            return;
+        }
+        // set the pivot to the last element, and set it to its current index,
+        // and all the elements before it should be less than, and all the
+        // elements after it should be greater than mid (not sorted at this point)
+        int pivot = partition(nums, start, end);
+        // now the pivot is at its correct position, apply the same procedure,
+        // first on the left side of pivot,
+        sortWithEnd(nums, start, pivot - 1);
+        // then on the right side of pivot
+        sortWithEnd(nums, pivot + 1, end);
+    }
+
+    private static int partition(int[] nums, int start, int end) {
+        // iterator will put the smaller elements (than pivot), to its left side
+        int iterator = start;
+        for (int i = start; i <= end; i++) {
+            // "i" should go till end (pivot) element, because in the end,
+            // pivot element should also be swapped, with next element, that is swapped
+            // previously
+            if (nums[i] <= nums[end]) {
+                // only swap the current iterator element with the current "i"th element,
+                // if ith element is smaller than the pivot element, then move the iterator to
+                // one step further, so that next element should be checked with the next,
+                // ith element.
+                // If the ith element is greater than the pivot element, don't do anything,
+                // don't even move the iterator.
+                // this END is the pivot
+                swap(nums, i, iterator);
+                iterator++;
+            }
+        }
+        // at last pivot element should be swapped with the iterator element, and
+        // iterator, will be moved ahead by 1 (iterator++), so the pivot element is
+        // iterator - 1
+        return iterator - 1;
     }
 
     private static void swap(int[] arr, int first, int second) {
