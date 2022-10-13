@@ -100,6 +100,7 @@ public class QuickSort {
             // "i" should go till end (pivot) element, because in the end,
             // pivot element should also be swapped, with next element, that is swapped
             // previously
+            // "end" is the "pivot"
             if (nums[i] <= nums[end]) {
                 // only swap the current iterator element with the current "i"th element,
                 // if ith element is smaller than the pivot element, then move the iterator to
