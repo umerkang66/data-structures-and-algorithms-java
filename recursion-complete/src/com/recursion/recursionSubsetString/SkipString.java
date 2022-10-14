@@ -6,16 +6,15 @@ public class SkipString {
         System.out.println(skipString(string, "apples"));
     }
 
-    private static String skipString(String string, String skip) {
-        if (string.isEmpty()) {
+    private static String skipString(String str, String skip) {
+        if (str.isEmpty()) {
             return "";
         }
-        if (string.startsWith(skip)) {
-            return skipString(string.substring(skip.length()), skip);
-        } else {
-            // First all the functions calls will be called, after the last function
-            // returned the empty string, then these chars will be added in main string
-            return string.charAt(0) + skipString(string.substring(1), skip);
+        if (str.startsWith(skip)) {
+            return skipString(str.substring(skip.length()), skip);
         }
+        // First all the functions calls will be called, after the last function
+        // returned the empty string, then these chars will be added in main string
+        return str.charAt(0) + skipString(str.substring(1), skip);
     }
 }
