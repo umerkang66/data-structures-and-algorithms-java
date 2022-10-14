@@ -39,7 +39,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.SkipString">
+  <component name="RunManager" selected="Application.SubsetAgain">
     <configuration name="QuicksortAgain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSorting.QuicksortAgain" />
       <module name="recursion-complete" />
@@ -79,8 +79,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Subset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.Subset" />
+      <module name="recursion-complete" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.recursion.recursionSubsetString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SubsetAgain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.SubsetAgain" />
+      <module name="recursion-complete" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.recursion.recursionSubsetString.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SubsetAgain" />
+        <item itemvalue="Application.Subset" />
         <item itemvalue="Application.SkipString" />
         <item itemvalue="Application.SkipCharacter" />
         <item itemvalue="Application.QuicksortAgain" />
