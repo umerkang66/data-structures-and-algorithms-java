@@ -6,6 +6,7 @@ public class Permutations {
     public static void main(String[] args) {
         String str = "abc";
         permutations("", str);
+        System.out.println("🔥🔥🔥");
         System.out.println(permutationsArray("", str));
         System.out.println(permutationsCount("", str));
     }
@@ -15,11 +16,11 @@ public class Permutations {
             System.out.println(processed);
             return;
         }
-        char ch = unprocessed.charAt(0);
+        int currChar = unprocessed.charAt(0);
         for (int i = 0; i <= processed.length(); i++) {
             String first = processed.substring(0, i);
-            String second = processed.substring(i, processed.length());
-            permutations(first + ch + second, unprocessed.substring(1));
+            String last = processed.substring(i);
+            permutations(first + (char) currChar + last, unprocessed.substring(1));
         }
     }
 

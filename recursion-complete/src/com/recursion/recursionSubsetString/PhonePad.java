@@ -7,7 +7,7 @@ public class PhonePad {
         phonePad("", "12");
         System.out.println(phonePadArray("", "12"));
         System.out.println(phonePadCount("", "12"));
-        System.out.println(phonePadLeetcode("", "23"));
+        System.out.println(phonePadLeetCode("", "23"));
     }
 
     private static void phonePad(String processed, String unprocessed) {
@@ -51,7 +51,7 @@ public class PhonePad {
     }
 
     // https://leetcode.com/problems/letter-combinations-of-a-phone-number/
-    private static ArrayList<String> phonePadLeetcode(String processed, String unprocessed) {
+    private static ArrayList<String> phonePadLeetCode(String processed, String unprocessed) {
         if (unprocessed.isEmpty()) {
             ArrayList<String> phonePadsInternal = new ArrayList<>();
             if (processed.isEmpty()) {
@@ -78,7 +78,7 @@ public class PhonePad {
 
         for (int i = startCondition; i < stopCondition; i++) {
             char ch = (char) ('a' + i);
-            phonePadsOuter.addAll(phonePadLeetcode(processed + ch, unprocessed.substring(1)));
+            phonePadsOuter.addAll(phonePadLeetCode(processed + ch, unprocessed.substring(1)));
         }
         return phonePadsOuter;
     }
