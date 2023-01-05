@@ -35,7 +35,7 @@ public class Permutations {
         // When the processed length increases, number of recursion call increases
         for (int i = 0; i <= processed.length(); i++) {
             String first = processed.substring(0, i);
-            String second = processed.substring(i, processed.length());
+            String second = processed.substring(i);
             // This will return an arrayList, so add all the elements in new List (ans)
             ans.addAll(permutationsArray(first + ch + second, unprocessed.substring(1)));
         }
@@ -51,7 +51,7 @@ public class Permutations {
         // When the processed length increases, number of recursion call increases
         for (int i = 0; i <= processed.length(); i++) {
             String first = processed.substring(0, i);
-            String second = processed.substring(i, processed.length());
+            String second = processed.substring(i);
             // This will return an arrayList, so add all the elements in new List (ans)
             count += permutationsCount(first + ch + second, unprocessed.substring(1));
         }

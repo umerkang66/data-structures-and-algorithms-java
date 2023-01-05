@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0a9a3ba7-a691-4bf3-bb96-3eaff16f81dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/recursion/recursionArrays/RotatedBinarySearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/recursion/recursionArrays/RotatedBinarySearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/recursion/recursionSubsetString/Permutations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/recursion/recursionSubsetString/Permutations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/recursion/recursionSubsetString/PhonePad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/recursion/recursionSubsetString/PhonePad.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.PhonePad">
+  <component name="RunManager" selected="Application.RotatedBinarySearch">
     <configuration name="Permutations" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.Permutations" />
       <module name="recursion-complete" />
@@ -67,12 +67,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SkipString" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.SkipString" />
+    <configuration name="RotatedBinarySearch" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionArrays.RotatedBinarySearch" />
       <module name="recursion-complete" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.recursion.recursionSubsetString.*" />
+          <option name="PATTERN" value="com.recursion.recursionArrays.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,12 +80,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Subset" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.Subset" />
+    <configuration name="SortedArray" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionArrays.SortedArray" />
       <module name="recursion-complete" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.recursion.recursionSubsetString.*" />
+          <option name="PATTERN" value="com.recursion.recursionArrays.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,12 +93,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SubsetAgain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionSubsetString.SubsetAgain" />
+    <configuration name="Triangle1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.recursion.recursionPatterns.Triangle1" />
       <module name="recursion-complete" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.recursion.recursionSubsetString.*" />
+          <option name="PATTERN" value="com.recursion.recursionPatterns.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,11 +108,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RotatedBinarySearch" />
+        <item itemvalue="Application.Triangle1" />
+        <item itemvalue="Application.SortedArray" />
         <item itemvalue="Application.PhonePad" />
         <item itemvalue="Application.Permutations" />
-        <item itemvalue="Application.SubsetAgain" />
-        <item itemvalue="Application.Subset" />
-        <item itemvalue="Application.SkipString" />
       </list>
     </recent_temporary>
   </component>
