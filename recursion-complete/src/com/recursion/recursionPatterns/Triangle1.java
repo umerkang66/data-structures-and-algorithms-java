@@ -3,6 +3,7 @@ package com.recursion.recursionPatterns;
 public class Triangle1 {
     public static void main(String[] args) {
         triangle1(5, 0);
+        System.out.println("---");
         triangle2(5, 0);
     }
 
@@ -39,10 +40,9 @@ public class Triangle1 {
         // process of backtracking first linePrint will be called
         // then columns should start printing
         triangle2(row - 1, 0);
-        if (row == 1) {
-            // don't print the first empty line
-            return;
+        if (row != 1) {
+            // if row == 1, don't add a new line
+            System.out.println();
         }
-        System.out.println();
     }
 }
